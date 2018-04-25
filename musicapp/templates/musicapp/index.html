@@ -1,0 +1,11 @@
+{% extends 'musicapp/default.html' %}
+{% block body %}
+<h2>Here are all my albums:</h2>
+<ol>
+    {% for album in all_albums %}
+        <li><a href="{% url 'musicapp:detail' album.id  %}">{{ album.album_title }}</a></li>
+    {% endfor %}
+</ol>﻿
+
+{% endblock %}
+# make html colorful page
