@@ -15,13 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 from. import views
 
-app_name = "musicapp"
+app_name = 'musicapp'
 
 urlpatterns = [
-    path('' , views.index, name = 'index'),
-    path('<int:album_id>/' , views.detail, name = "detail"),
-    path('<int:album_id>/favorite/' , views.favorite, name = "favorite"),
+    path('', views.IndexView.as_view(), name = 'index'),
 
+    path('register/', views.UserFormView.as_view(), name='register'),
+
+    path('register/', views.UserFormView.as_view(), name='register'),
+
+    path('<int:pk>', views.DetailView.as_view(), name = 'detail'),
+
+    #/music/album/add/
+    path('album/add/', views.AlbumCreate.as_view(), name = 'add-album'),
+
+    path('album/<int:pk>/', views.AlbumEdit.as_view(), name='update-album'),
+
+    path('album/<int:pk>/delete/', views.AlbumDelete.as_view(), name='delete-album'),
 ]

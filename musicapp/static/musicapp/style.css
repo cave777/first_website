@@ -1,9 +1,10 @@
 body{
         background: white url("images/background.jpg");
+
    }
-.navvar{
+.navbar{
     border-radius:0;
-    border-bottom: 10px;
+    border-bottom: 20px;
 }
 
 .navbar-brand, .navbar-nav, body{
@@ -22,4 +23,7 @@ h2{
     color: white;
     margin-left:10px;
     margin-top:50px;
+}
+.title_color{
+    color: black;
 }
